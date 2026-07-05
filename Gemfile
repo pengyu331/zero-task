@@ -21,12 +21,16 @@ gem "tzinfo-data", platforms: %i[windows jruby]
 gem "vite_rails", "~> 3.0"
 
 group :development, :test do
+  gem "amazing_print"
   gem "brakeman", require: false
   gem "bundler-audit", require: false
   gem "debug", platforms: %i[mri windows], require: "debug/prelude"
   gem "dotenv", ">= 3.0"
   gem "factory_bot_rails"
+  gem "pry-byebug"
+  gem "pry-rails"
   gem "rspec-rails"
+  gem "simplecov", require: false
 end
 
 group :development do
