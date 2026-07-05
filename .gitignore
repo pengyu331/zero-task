@@ -49,3 +49,4 @@ node_modules
 *.local
 
 !/.env.sample
+/.erb_lint_cache
