@@ -50,3 +50,6 @@ node_modules
 
 !/.env.sample
 /.erb_lint_cache
+
+# Ignore vendored gems (local install)
+/vendor/bundle/
