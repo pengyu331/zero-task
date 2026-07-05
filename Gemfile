@@ -5,7 +5,7 @@ source "https://rubygems.org"
 ruby file: ".ruby-version"
 
 gem "bootsnap", require: false
-gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 2.0"
 gem "jbuilder"
 gem "kamal", require: false
 gem "pg", "~> 1.1"
