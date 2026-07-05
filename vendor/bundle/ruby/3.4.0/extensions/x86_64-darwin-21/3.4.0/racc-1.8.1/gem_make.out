@@ -1,0 +1,19 @@
+current directory: /Users/pengyu/Codes/r/zero_task/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+/Users/pengyu/.rbenv/versions/3.4.7/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/pengyu/Codes/r/zero_task/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260705-87764-8jsdat sitelibdir\=./.gem.20260705-87764-8jsdat clean
+
+current directory: /Users/pengyu/Codes/r/zero_task/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260705-87764-8jsdat sitelibdir\=./.gem.20260705-87764-8jsdat
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/pengyu/Codes/r/zero_task/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260705-87764-8jsdat sitelibdir\=./.gem.20260705-87764-8jsdat install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20260705-87764-8jsdat/racc
+
+current directory: /Users/pengyu/Codes/r/zero_task/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260705-87764-8jsdat sitelibdir\=./.gem.20260705-87764-8jsdat clean

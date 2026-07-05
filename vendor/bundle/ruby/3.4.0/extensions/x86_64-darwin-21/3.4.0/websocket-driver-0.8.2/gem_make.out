@@ -1,0 +1,19 @@
+current directory: /Users/pengyu/Codes/r/zero_task/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.2/ext/websocket-driver
+/Users/pengyu/.rbenv/versions/3.4.7/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/pengyu/Codes/r/zero_task/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.2/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20260705-87764-8idf3n sitelibdir\=./.gem.20260705-87764-8idf3n clean
+
+current directory: /Users/pengyu/Codes/r/zero_task/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.2/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20260705-87764-8idf3n sitelibdir\=./.gem.20260705-87764-8idf3n
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/pengyu/Codes/r/zero_task/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.2/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20260705-87764-8idf3n sitelibdir\=./.gem.20260705-87764-8idf3n install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20260705-87764-8idf3n
+
+current directory: /Users/pengyu/Codes/r/zero_task/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.2/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20260705-87764-8idf3n sitelibdir\=./.gem.20260705-87764-8idf3n clean

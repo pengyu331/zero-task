@@ -1,0 +1,19 @@
+current directory: /Users/pengyu/Codes/r/zero_task/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/pengyu/.rbenv/versions/3.4.7/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/pengyu/Codes/r/zero_task/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260705-87764-9g2pn2 sitelibdir\=./.gem.20260705-87764-9g2pn2 clean
+
+current directory: /Users/pengyu/Codes/r/zero_task/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260705-87764-9g2pn2 sitelibdir\=./.gem.20260705-87764-9g2pn2
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/pengyu/Codes/r/zero_task/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260705-87764-9g2pn2 sitelibdir\=./.gem.20260705-87764-9g2pn2 install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20260705-87764-9g2pn2/skiptrace/internal
+
+current directory: /Users/pengyu/Codes/r/zero_task/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260705-87764-9g2pn2 sitelibdir\=./.gem.20260705-87764-9g2pn2 clean

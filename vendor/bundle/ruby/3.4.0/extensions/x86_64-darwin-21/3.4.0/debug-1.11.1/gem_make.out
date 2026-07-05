@@ -1,0 +1,20 @@
+current directory: /Users/pengyu/Codes/r/zero_task/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+/Users/pengyu/.rbenv/versions/3.4.7/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/pengyu/Codes/r/zero_task/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260705-87764-b9olt1 sitelibdir\=./.gem.20260705-87764-b9olt1 clean
+
+current directory: /Users/pengyu/Codes/r/zero_task/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260705-87764-b9olt1 sitelibdir\=./.gem.20260705-87764-b9olt1
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/pengyu/Codes/r/zero_task/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260705-87764-b9olt1 sitelibdir\=./.gem.20260705-87764-b9olt1 install
+/usr/bin/install -c -m 0755 debug.bundle ./.gem.20260705-87764-b9olt1/debug
+
+current directory: /Users/pengyu/Codes/r/zero_task/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260705-87764-b9olt1 sitelibdir\=./.gem.20260705-87764-b9olt1 clean
