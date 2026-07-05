@@ -417,6 +417,7 @@ DEPENDENCIES
   bundler-audit
   capybara
   debug
+  dotenv (>= 3.0)
   image_processing (~> 1.2)
   jbuilder
   kamal
