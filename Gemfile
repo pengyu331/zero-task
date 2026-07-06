@@ -19,6 +19,9 @@ gem "thruster", require: false
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[windows jruby]
 gem "vite_rails", "~> 3.0"
+gem "devise"
+gem "omniauth-github"
+gem "omniauth-rails_csrf_protection"
 
 group :development, :test do
   gem "amazing_print"

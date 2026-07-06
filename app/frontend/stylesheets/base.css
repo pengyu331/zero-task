@@ -6,3 +6,16 @@
   - Default foreground, background, and link colors.
   - Global CSS variables (declared on :root), such as color palette.
 */
+
+@layer components {
+  nav {
+    & button[type="submit"] {
+      @apply m-4 bg-purple-600 text-white px-6 py-2 rounded-md
+              font-semibold cursor-pointer hover:bg-purple-700
+              transition-colors;
+    }
+  }
+  .main-container {
+    @apply max-w-md mx-auto mt-16 p-8 rounded-xl shadow-sm;
+  }
+}
