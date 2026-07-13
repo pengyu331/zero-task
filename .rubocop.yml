@@ -54,6 +54,7 @@ Layout/HashAlignment:
 Layout/LineLength:
   Exclude:
     - config/initializers/content_security_policy.rb
+    - config/initializers/devise.rb
 
 Layout/MultilineArrayLineBreaks:
   Enabled: true
@@ -93,12 +94,12 @@ Metrics/BlockLength:
   Max: 25
   Exclude:
     - config/**/*
-    - test/**/*
+    - spec/**/*
 
 Metrics/ClassLength:
   Max: 200
   Exclude:
-    - test/**/*
+    - spec/**/*
 
 Metrics/CyclomaticComplexity:
   Enabled: false
@@ -108,7 +109,7 @@ Metrics/MethodLength:
   Exclude:
     - bin/setup
     - db/migrate/*
-    - test/**/*
+    - spec/**/*
 
 Metrics/ModuleLength:
   Max: 200

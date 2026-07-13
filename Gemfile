@@ -5,9 +5,12 @@ source "https://rubygems.org"
 ruby file: ".ruby-version"
 
 gem "bootsnap", require: false
+gem "devise"
 gem "image_processing", "~> 1.2"
 gem "jbuilder"
 gem "kamal", require: false
+gem "omniauth-github"
+gem "omniauth-rails_csrf_protection"
 gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
 gem "rails", "~> 8.1.3"
@@ -19,9 +22,6 @@ gem "thruster", require: false
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[windows jruby]
 gem "vite_rails", "~> 3.0"
-gem "devise"
-gem "omniauth-github"
-gem "omniauth-rails_csrf_protection"
 
 group :development, :test do
   gem "amazing_print"

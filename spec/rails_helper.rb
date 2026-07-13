@@ -26,7 +26,7 @@ require "rspec/rails"
 # require only the support files necessary.
 #
 # 自动加载 spec/support 目录下的所有文件
-Rails.root.glob('spec/support/**/*.rb').sort_by(&:to_s).each { |f| require f }
+Rails.root.glob("spec/support/**/*.rb").sort_by(&:to_s).each { |f| require f }
 
 # Ensures that the test database schema matches the current schema file.
 # If there are pending migrations it will invoke `db:test:prepare` to

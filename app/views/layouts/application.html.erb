@@ -34,8 +34,8 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render "layouts/nav" %>
+    <%= render "layouts/flash" %>
 
     <div class="main-container main-form">
       <%= yield %>
