@@ -9,6 +9,7 @@ gem "devise"
 gem "image_processing", "~> 1.2"
 gem "jbuilder"
 gem "kamal", require: false
+gem "kaminari"
 gem "omniauth-github"
 gem "omniauth-rails_csrf_protection"
 gem "pg", "~> 1.1"

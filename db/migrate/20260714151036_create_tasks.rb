@@ -10,6 +10,6 @@ class CreateTasks < ActiveRecord::Migration[8.1]
       t.timestamps
     end
 
-    add_index :tasks,[:user_id, :state]
+    add_index :tasks, [:user_id, :state]
   end
 end
