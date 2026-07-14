@@ -1,0 +1,21 @@
+<% flash.each do |key, value| %>
+  <% theme_class = case key.to_s # <1>
+                   when "notice"
+                     "border-cyan-500 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.2)] bg-cyan-950/40"
+                   when "alert"
+                     "border-fuchsia-500 text-fuchsia-400 shadow-[0_0_15px_rgba(232,121,249,0.2)] bg-fuchsia-950/40"
+                   else "border-slate-500 text-slate-400 bg-slate-900"
+                   end %>
+
+  <div class="mb-6 p-4 border-l-4 <%= theme_class %> backdrop-blur-sm transform transition-all duration-500 hover:translate-x-1">
+    <div class="flex items-center gap-3">
+      <span class="text-xl">
+        <%= key.to_s == "notice" ? "✓" : "⚠" %>
+      </span>
+      <span class="font-mono tracking-wide text-sm uppercase">
+        <span class="opacity-50 mr-2">[SYSTEM]:</span>
+        <%= value %>
+      </span>
+    </div>
+  </div>
+<% end %>

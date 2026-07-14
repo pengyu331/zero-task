@@ -1,0 +1,46 @@
+<div class="mx-auto max-w-md">
+  <div class="max-w-xl w-full mx-auto shadow-lg bg-slate-900 rounded-lg">
+    <h2 class="text-xl mb-4 text-center">Log in</h2>
+
+    <div class="w-3/4 mx-auto">
+      <% unless Rails.env.production? %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field mb-4">
+          <%= f.label :email, class: "text-lg text-gray-300" %><br>
+          <%= f.email_field :email,
+                autofocus: true,
+                autocomplete: "email",
+                class: "w-full mt-1 mb-1 px-3 py-1 border border-gray-300 rounded-md focus:ring-2
+          focus:ring-blue-500 outline-hidden" %>
+        </div>
+
+        <div class="field mb-4">
+          <%= f.label :password, class: "text-lg text-gray-300" %><br>
+          <%= f.password_field :password,
+                autocomplete: "current-password",
+                class: "w-full mt-1 mb-1 px-3 py-1 border border-gray-300 rounded-md focus:ring-2
+          focus:ring-blue-500 outline-hidden" %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="field mb-4">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me, class: "mb-2 text-lg text-gray-300" %>
+          </div>
+        <% end %>
+
+        <div class="actions w-full">
+          <!-- 蓝色光晕的按钮 -->
+          <%= f.submit "Log in",
+                class: "w-full py-3 px-4 mt-6bg-slate-900 border border-blue-500 text-blue-400 font-bold
+          tracking-[0.2em] hover:bg-blue-950 hover:text-blue-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]
+          active:scale-[0.98] transition-all duration-300 uppercase rounded cursor-pointer" %>
+        </div>
+      <% end %>
+      <% end %>
+      <div class="flex flex-col items-center mt-4 gap-4">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>
