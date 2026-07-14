@@ -1,3 +1,4 @@
+<div id="flash_messages">
 <% flash.each do |key, value| %>
   <% theme_class = case key.to_s # <1>
                    when "notice"
@@ -19,3 +20,4 @@
     </div>
   </div>
 <% end %>
+</div>

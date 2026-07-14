@@ -36,4 +36,49 @@ RSpec.describe "/tasks", type: :request do
       end
     end
   end
+
+  describe "POST #create" do
+    before do
+      sign_in user
+    end
+
+    context "with valid params" do
+      let(:valid_params) { {task: {description: "Learning Ruby"}} }
+
+      subject { post user_tasks_path(user), params: valid_params, as: :turbo_stream }
+
+      it "creates the task successfully" do
+        expect { subject }.to change(Task, :count).by(1)
+
+        expect(response).to have_http_status(:success)
+        expect(response.media_type).to eq Mime[:turbo_stream]
+        expect(response.body).to include('turbo-stream action="prepend" target="tasks_list"')
+        expect(response.body).to include("Learning Ruby")
+      end
+    end
+
+    context "with invalid params" do
+      let(:invalid_params) { {task: {description: "A" * 141}} }
+
+      subject { post user_tasks_path(user), params: invalid_params, as: :turbo_stream }
+
+      it "does not create the task" do
+        expect { subject }.not_to change(Task, :count)
+
+        expect(response.body).to include('turbo-stream action="replace" target="flash_messages"')
+      end
+    end
+
+    context "with invalid params2" do
+      let(:invalid_params) { {task: {description: ""}} }
+
+      subject { post user_tasks_path(user), params: invalid_params, as: :turbo_stream }
+
+      it "does not create the task" do
+        expect { subject }.not_to change(Task, :count)
+
+        expect(response.body).to include('turbo-stream action="replace" target="flash_messages"')
+      end
+    end
+  end
 end
