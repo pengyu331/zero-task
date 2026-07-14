@@ -81,4 +81,31 @@ RSpec.describe "/tasks", type: :request do
       end
     end
   end
+
+  describe "PUT #update" do
+    let(:task) { create(:task, user: user) }
+
+    before do
+      sign_in user
+    end
+
+    context "with valid params" do
+      it "updates the task successfully" do
+        put user_task_path(user, task), params: {task: {description: "Play chess with friends"}}
+
+        expect(task.reload.description).to eq("Play chess with friends")
+        expect(response).to redirect_to(user_tasks_path(user))
+        expect(flash[:notice]).to match(/Task updated/)
+      end
+    end
+
+    context "with invalid params" do
+      it "does not update the task" do
+        put user_task_path(user, task), params: {task: {description: ""}}
+
+        expect(task.reload.description).to eq("Initialize cyberpunk todo item")
+        expect(response).to have_http_status(:unprocessable_content)
+      end
+    end
+  end
 end
