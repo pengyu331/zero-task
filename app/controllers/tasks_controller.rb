@@ -5,7 +5,12 @@ class TasksController < ApplicationController
   before_action :verify_user_access
 
   def index
-    @tasks = current_user.tasks.order(created_at: :desc).page(params[:page]).per(5)
+    @tasks = current_user.tasks
+      .filter_by_state(params[:status])
+      .search_by_keyword(params[:query])
+      .recent
+      .page(params[:page]).per(5)
+
     @new_task = current_user.tasks.build
   end
 

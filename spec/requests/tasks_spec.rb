@@ -34,6 +34,18 @@ RSpec.describe "/tasks", type: :request do
         expect(response).to redirect_to(root_path)
         expect(flash[:alert]).to match(/Access Denied/)
       end
+
+      it "can view the filter and search results" do
+        create(:task, user: user, description: "Learning Ruby")
+        create(:task, user: user, description: "Learning Hotwire", state: :completed)
+        create(:task, user: user, description: "Reading the Rails Guide")
+
+        get user_tasks_path(user), params: {status: "active", query: "Learning"}
+
+        expect(response.body).to include("Learning Ruby")
+        expect(response.body).not_to include("Learning Hotwire")
+        expect(response.body).not_to include("Reading the Rails Guide")
+      end
     end
   end
 

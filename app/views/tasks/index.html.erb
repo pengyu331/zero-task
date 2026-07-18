@@ -14,6 +14,33 @@
       <%= render "form", task: @new_task %>
     </div>
 
+    <div class="mb-6 bg-zinc-900 border border-cyan-900 p-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <%= form_with(url: user_tasks_path(current_user), method: :get, data: { turbo_frame: "tasks_list" }, class: "flex flex-col md:flex-row w-full gap-4 items-center") do |f| %>
+        <%# Filter 按钮组 %>
+        <div class="flex gap-2">
+          <% ['all', 'active', 'completed'].each do |status| %>
+            <label class="cursor-pointer">
+              <%= f.radio_button :status, status, checked: params[:status] == status || (params[:status].blank? && status == 'all'), class: "peer sr-only", data: { controller: "autosubmit", action: "change->autosubmit#submit" } %>
+              <div class="px-4 py-2 border border-zinc-700 text-zinc-500 peer-checked:border-cyan-500 peer-checked:text-cyan-400 hover:text-cyan-300 uppercase text-xs tracking-widest transition-colors font-bold">
+                <%= status.upcase %>
+              </div>
+            </label>
+          <% end %>
+        </div>
+        <%# Search Bar %>
+        <div class="flex-1 w-full md:w-auto flex justify-end">
+          <div class="relative w-full md:w-64">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-cyan-700">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+            <%= f.text_field :query, value: params[:query], placeholder: "SCAN KEYWORDS...", class: "w-full pl-10 pr-4 py-2 bg-black border border-cyan-900 focus:border-cyan-500 text-cyan-400 focus:ring-0 text-sm font-mono outline-none" %>
+          </div>
+          <%= f.submit "SEARCH", class: "hidden" %>
+        </div>
+      <% end %>
+    </div>
+
+
     <div class="mt-8 border border-cyan-500/20 bg-black/50 p-6 rounded shadow-[0_0_15px_rgba(34,197,94,0.1)]">
       <div id="tasks_list" class="flex flex-col gap-4">
         <%= render @tasks %>
