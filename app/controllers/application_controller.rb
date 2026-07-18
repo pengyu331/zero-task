@@ -5,4 +5,12 @@ class ApplicationController < ActionController::Base
   allow_browser versions: :modern
 
   before_action :authenticate_user!
+
+  private
+
+  def verify_user_access
+    unless current_user.id.to_s == params[:user_id]
+      redirect_to root_path, alert: "Access Denied: You are attempting to view an invalid resource."
+    end
+  end
 end

@@ -61,12 +61,6 @@ class TasksController < ApplicationController
 
   private
 
-  def verify_user_access
-    unless current_user.id.to_s == params[:user_id]
-      redirect_to root_path, alert: "Access Denied: You are attempting to view an invalid resource."
-    end
-  end
-
   def task_params
     params.expect(task: [:description, :state])
   end

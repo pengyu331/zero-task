@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get "dashboards/index"
   devise_for :users,
     controllers: {
       omniauth_callbacks: "users/omniauth_callbacks"
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [] do
     resources :tasks, only: [:index, :create, :edit, :update, :destroy]
+    get "dashboard", to: "dashboards#index", as: :dashboard
   end
   root "home#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
