@@ -33,6 +33,7 @@ class TasksController < ApplicationController
   def update
     if @task.update(task_params)
       respond_to do |format|
+        format.turbo_stream { render turbo_stream: turbo_stream.replace(@task) }
         format.html { redirect_to user_tasks_path(current_user), notice: "Task updated" }
       end
     else
@@ -62,7 +63,7 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.expect(task: [:description])
+    params.expect(task: [:description, :state])
   end
 
   def set_task

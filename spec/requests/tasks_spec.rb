@@ -97,6 +97,17 @@ RSpec.describe "/tasks", type: :request do
         expect(response).to redirect_to(user_tasks_path(user))
         expect(flash[:notice]).to match(/Task updated/)
       end
+
+      it "toggle the task state successfully" do
+        put user_task_path(user, task), params: { task: { state: "completed"} }, as: :turbo_stream
+
+        expect(task.reload.state).to eq("completed")
+
+        expect(response.media_type).to eq Mime[:turbo_stream]
+        expect(response.body).to include("turbo-stream action=\"replace\" target=\"task_#{task.id}\"")
+
+        expect(response.body).to include("line-through")
+      end
     end
 
     context "with invalid params" do
