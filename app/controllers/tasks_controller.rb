@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class TasksController < ApplicationController
-  before_action :set_task, only: %i[edit update]
+  before_action :set_task, only: %i[edit update destroy]
   before_action :verify_user_access
 
   def index
@@ -41,6 +41,15 @@ class TasksController < ApplicationController
         format.turbo_stream { render turbo_stream: turbo_stream.replace("flash_messages", partial: "shared/flash") }
         format.html { render :edit, status: :unprocessable_content }
       end
+    end
+  end
+
+  def destroy
+    @task.destroy
+
+    respond_to do |format|
+      format.turbo_stream { render turbo_stream: turbo_stream.remove(@task) }
+      format.html { redirect_to user_tasks_path(current_user), notice: "Task purged from list." }
     end
   end
 

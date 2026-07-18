@@ -108,4 +108,21 @@ RSpec.describe "/tasks", type: :request do
       end
     end
   end
+
+  describe "DELETE #destory" do
+    let!(:task) { create(:task, user: user) }
+
+    before do
+      sign_in user
+    end
+
+    subject { delete user_task_path(user, task), as: :turbo_stream }
+
+    it "destroy the task successfully" do
+      expect { subject }.to change(Task, :count).by(-1)
+
+      expect(response.media_type).to eq Mime[:turbo_stream]
+      expect(response.body).to include("turbo-stream action=\"remove\" target=\"task_#{task.id}\"")
+    end
+  end
 end
