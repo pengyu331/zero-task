@@ -99,7 +99,7 @@ RSpec.describe "/tasks", type: :request do
       end
 
       it "toggle the task state successfully" do
-        put user_task_path(user, task), params: { task: { state: "completed"} }, as: :turbo_stream
+        put user_task_path(user, task), params: {task: {state: "completed"}}, as: :turbo_stream
 
         expect(task.reload.state).to eq("completed")
 

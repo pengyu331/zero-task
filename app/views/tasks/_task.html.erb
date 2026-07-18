@@ -1,15 +1,12 @@
 <%= turbo_frame_tag task do %>
   <div class="group flex items-center justify-between p-4 border border-cyan-900 bg-zinc-900/50 hover:bg-zinc-900 hover:border-cyan-500 transition-all duration-300">
     <div class="flex items-center gap-4 flex-1">
-      <%= form_with(model: [current_user, task], data: { controller: "autosubmit" }, class: "flex items-center m-0") do |f| %>
+      <%= form_with(model: [current_user, task], data: {controller: "autosubmit"}, class: "flex items-center m-0") do |f| %>
         <label class="group relative flex items-center cursor-pointer">
           <%= f.check_box :state,
-              {
-                checked: task.completed?,
-                data: { action: "change->autosubmit#submit" },
-                class: "sr-only"
-              },
-              "completed", "active" %>
+                {checked: task.completed?, data: {action: "change->autosubmit#submit"}, class: "sr-only"},
+                "completed",
+                "active" %>
 
           <div class="w-6 h-6 rounded border-2 border-cyan-500 bg-black
                 group-has-checked:bg-cyan-500 group-has-checked:border-cyan-400
@@ -25,7 +22,6 @@
           </div>
         </label>
       <% end %>
-
 
       <div class="flex flex-col">
         <span class="text-lg <%= task.completed? ? "text-zinc-600 line-through" : "text-cyan-300" %>">
